@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>karam todo list</title>
+    <link rel="manifest" href="./static/manifest.json">
+    <link rel="stylesheet" href="./static/styles/style.css">
+</head>
+<body data-color="#3c345c">
+    <header>
+        <div  class="menu" id="menu"><img src="./static/icons/menu.svg" alt=""></div> 
+        <p class="bar">To-Do List</p>
+    </header>
+
+    <aside class="" id="aside">
+
+        <div class="aside-header">
+            <div class="closer-container" >
+                <div id="aside-closer" class="closer">
+                    <img src="./static/icons/back-arrow-navigation-svgrepo-com.svg" alt="">
+                </div>
+
+                <div class="color-changer n-active" id="color-changer">
+                    <div class="color" onclick="colorChanger('#d6542c')" style="background-color:#d6542c;"></div>
+                    <div class="color" onclick="colorChanger('#eda28a')" style="background-color:#eda28a"></div>
+                    <div class="color" onclick="colorChanger('#124c81')" style="background-color:#124c81"></div>
+                    <div class="color" onclick="colorChanger('#4e6190')" style="background-color:#4e6190"></div>
+                    <div class="color" onclick="colorChanger('#99a8bb')" style="background-color:#99a8bb"></div>
+                    <div class="color" onclick="colorChanger('#3c345c')" style="background-color:#3c345c"></div>
+                </div>
+
+                <div class="settings" id="settings">
+
+                    <img src="./static/icons/settings.svg" alt="" srcset="">
+                </div> 
+            </div>
+           
+            <section>
+                
+                <h3>
+                    Categories
+                </h3>
+                
+            </section>
+
+         </div>        
+
+        <div class="aside-sep" >
+            <div class="category" onclick="setCategory('home')">
+            <img src="./static/icons/home.svg" >  <p>home</p>
+            </div>
+            <div class="category" onclick="setCategory('study')">
+            <img src="./static/icons/study.svg" alt="">   <p>study</p>
+            </div>
+            
+            <div class="category" onclick="setCategory('work')">
+            <img src="./static/icons/work.svg" alt="">
+            <p>work</p>
+            </div>
+        </div>
+        <div class="aside-bottom" >
+            
+            <small>created by:</small>  <span>Karam Elhaj</span> 
+        </div>
+
+    </aside>
+    <div class="todo-form n-active "   id="form">
+        <h2>add task</h2>
+        <div>
+            <input type="text" required name="title" id="title" placeholder="title"/>
+        </div>
+
+        <div>
+            <textarea type="text" name="descr" required id="desc" placeholder="description"></textarea>
+        </div>
+
+        <button class="add-button" id="add-todo-button">add to-do</button>
+    </div>
+
+    <main>
+
+        <div  class="todos" id="todos">
+            
+        </div>
+        <div class="add-opener" id="form-opener" >
+            +
+        </div>
+        <script src="./static/scripts/index.js"></script>
+        <script src="./static/scripts/uiModfiers.js"></script>
+    </main>
+</body>
+</html>

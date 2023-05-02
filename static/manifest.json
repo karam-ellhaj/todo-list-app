@@ -1,0 +1,6 @@
+{
+    "name":"todo-list",
+    "display":"standalone",
+    "start_url":"/",
+    "background_color":"rgb(10, 3, 60)"
+}
