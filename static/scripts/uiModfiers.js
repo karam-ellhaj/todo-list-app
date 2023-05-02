@@ -1,7 +1,8 @@
-formOpener.onclick = ()=>{
 
+formOpener.onclick = ()=>{// you see that blue backgrounded button? this is the click handler function of it
+                
 
-    if (!('clicked' == formOpener.classList[1])){
+    if (!('clicked' == formOpener.classList[1])){//if the form to add a todo is not opened it will open it, else it will close it
         formOpener.classList.add("clicked")
         form.classList.remove("n-active")
 
@@ -16,12 +17,11 @@ formOpener.onclick = ()=>{
 let menu = document.getElementById('menu')
 let aside = document.getElementById('aside')
 
-menu.onclick = ()=>{
+menu.onclick = ()=>{//the click handler to open the side menu
     console.log('nf')
     menu.classList.add("opened")
     aside.classList.add("menu-active")
     asideCloser.classList.add("aside-closer")
-
     render()
 }
 
@@ -31,12 +31,10 @@ asideCloser.onclick=()=>{
     asideCloser.classList.remove("aside-closer")
 }
 
-
 function colorChanger(color){
     
     document.body.style = "--main-color:"+color
     document.cookie = color;
-
 }
 
 let settings = document.getElementById("settings")

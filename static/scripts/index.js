@@ -1,7 +1,10 @@
-let category="home";
-
-
-class Todo{
+let category="home";/* 
+a global variable that reffers to the categories 
+when tasks are added thier category will be whatevere this variable is 
+only tasks with the name inside this variable is shown on the  screen
+this variable is changed when the user choose another  category from the menu
+*/
+class Todo{//a class to create the todo object
     constructor(title,desc,category,done=false){
         this.title = title;
         this.desc = desc;
@@ -52,9 +55,9 @@ let formOpener= document.getElementById("form-opener")
 let title = document.getElementById("title")
 let desc = document.getElementById("desc")
 
-let button  = document.getElementById("add-todo-button")
+let button  = document.getElementById("add-todo-button")//the button clicked to add the todo
 
-button.onclick = ()=>{
+button.onclick = ()=>{//the function that handles the click
     if (title.value && desc.value){
     let todo = new Todo(title.value,desc.value,category)
     add(todo)
@@ -64,17 +67,18 @@ button.onclick = ()=>{
         alert("you cann't add an empty task ")
     }
 
+
+    //those two lines are to clear the input areas after pressing the button
     title.value=''
     desc.value=''
     
-
-    render()
+    render()//running the function that renders the todos to update the screen with the latest added todos
 }
 
 
 
 
-function renderTodos(todos,category){
+function renderTodos(todos,category){//the function that renders todos
 
     todosContainer.innerHTML=`
     <h2>${category}</h2>`
@@ -101,14 +105,14 @@ function renderTodos(todos,category){
 
     }); 
 }
-function render(){
+function render(){ 
     renderTodos( JSON.parse(localStorage.getItem('todos' )),category)
 }
 onload = ()=>{
     render()
 }
 
-function setCategory(cat){
+function setCategory(cat){//the function that changes the category variable 
     category=cat;
     closeMenu()
     render()
