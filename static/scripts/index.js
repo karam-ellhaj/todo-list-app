@@ -114,6 +114,8 @@ onload = ()=>{
 
 function setCategory(cat){//the function that changes the category variable 
     category=cat;
-    closeMenu()
+    menu.classList.remove("opened")
+    aside.classList.remove("menu-active")
+    asideCloser.classList.remove("aside-closer")
     render()
 }
