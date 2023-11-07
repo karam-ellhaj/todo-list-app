@@ -7,10 +7,11 @@
 html{
     background-color: var(--main-color) ;
     max-zoom: 100%;
-    
-    --main-color:#3c345c;
+
+    --main-color:rgba(223, 223, 223, 0);
     --secondry-color:white;
     --third-color:#4a90e2;
+
 }
 
 body{

@@ -100,7 +100,6 @@ function renderTodos(todos,category){//the function that renders todos
         </div>`
         } 
         
-        document.body.dataset = document.cookie
         index++;
 
     }); 
@@ -110,7 +109,7 @@ function render(){
     renderTodos( JSON.parse(localStorage.getItem('todos' )),category)
 }
 onload = ()=>{
-    document.body.style = "--main-color:"+localStorage.getItem('color')
+    colorChanger(localStorage.getItem('color'))
     render()
 }
 
