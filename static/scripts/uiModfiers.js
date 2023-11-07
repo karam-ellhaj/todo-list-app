@@ -33,7 +33,7 @@ asideCloser.onclick=()=>{
 
 function colorChanger(color){
     localStorage.setItem('color',color)
-    document.body.style = "--main-color:"+localStorage.getItem('color')
+    document.getElementsByName('html')[1].style = "--main-color:"+localStorage.getItem('color')
 }
 
 
