@@ -106,9 +106,11 @@ function renderTodos(todos,category){//the function that renders todos
     }); 
 }
 function render(){ 
+
     renderTodos( JSON.parse(localStorage.getItem('todos' )),category)
 }
 onload = ()=>{
+    document.body.style = "--main-color:"+localStorage.getItem('color')
     render()
 }
 
@@ -119,3 +121,10 @@ function setCategory(cat){//the function that changes the category variable
     asideCloser.classList.remove("aside-closer")
     render()
 }
+
+if ("serviceWorker" in navigator){
+    navigator.serviceWorker.register("/serviceWorker.js")
+}
+
+
+

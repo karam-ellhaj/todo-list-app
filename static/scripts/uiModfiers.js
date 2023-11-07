@@ -1,4 +1,4 @@
-
+let colorC = document.getElementById("color-changer")
 formOpener.onclick = ()=>{// you see that blue backgrounded button? this is the click handler function of it
                 
 
@@ -32,24 +32,8 @@ asideCloser.onclick=()=>{
 }
 
 function colorChanger(color){
-    
-    document.body.style = "--main-color:"+color
-    document.cookie = color;
+    localStorage.setItem('color',color)
+    document.body.style = "--main-color:"+localStorage.getItem('color')
 }
 
-let settings = document.getElementById("settings")
-let colorC = document.getElementById("color-changer")
-settings.onclick = ()=>{
 
-    
-    if (colorC.classList[1] === 'n-active'){
-        colorC.classList.remove("n-active")
-    }
-    else{
-        console.log("shit")
-
-        colorC.classList.add("n-active")
-    }
-    render()
-
-}
