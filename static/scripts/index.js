@@ -14,8 +14,6 @@ class Todo{//a class to create the todo object
 
 }
 
-
-
 function add(todo){
     let todos = JSON.parse(localStorage.getItem("todos")) 
     if(todos == null){
@@ -86,7 +84,7 @@ function renderTodos(todos,category){//the function that renders todos
     todos.forEach(todo => {
         if (todo.category === category){
         todosContainer.innerHTML+=`
-        <div class="todo" >
+        <div class="todo draggable" draggable="true" >
             <div class="content" onclick=makeDone(${index})>
                 <div class="title ${todo.done}" > ${todo.title}</div><hr>
                 <p class="desc ${todo.done}" >${todo.desc}</p>
@@ -107,6 +105,7 @@ function renderTodos(todos,category){//the function that renders todos
 function render(){ 
 
     renderTodos( JSON.parse(localStorage.getItem('todos' )),category)
+    dragndrop()
 }
 onload = ()=>{
     colorChanger(localStorage.getItem('color'))
@@ -124,6 +123,3 @@ function setCategory(cat){//the function that changes the category variable
 if ("serviceWorker" in navigator){
     navigator.serviceWorker.register("/serviceWorker.js")
 }
-
-
-
